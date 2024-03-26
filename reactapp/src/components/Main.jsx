@@ -1,7 +1,46 @@
+import React from "react";
+
+import { css } from "@emotion/css";
+
 function Main() {
+  const styles = css({
+    "&": {
+      display: "flex",
+      height: "100vh",
+    },
+    "& .menu": {
+      display: "block",
+      width: "300px",
+      borderRadius: "10px",
+      borderRight: "2px solid #ededed",
+    },
+    "& ul": {
+      listStyleType: "none",
+    },
+    "& ul li": {
+      margin: "70px",
+    },
+    "& ul li a": {
+      textDecoration: "none",
+      color: "black",
+      fontSize: "x-large",
+    },
+    "& .menucontent": {
+      margin: "20px",
+      padding: "5px",
+      borderRadius: "10px",
+    },
+    "& .content": {
+      display: "block",
+      border: "2px solid #ededed",
+      borderRadius: "5px",
+      padding: "20px",
+      margin: "5px",
+    },
+  });
   return (
     <>
-      <div className="container">
+      <div className={`container ${styles}`}>
         <div className="menu">
           <ul>
             <li>
