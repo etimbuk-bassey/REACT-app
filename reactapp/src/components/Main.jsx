@@ -12,7 +12,7 @@ function Main() {
     "& .menu": {
       display: "block",
       width: "300px",
-      borderRadius: "10px",
+      // borderRadius: "10px",
       borderRight: "2px solid #ededed",
     },
     "& ul": {
