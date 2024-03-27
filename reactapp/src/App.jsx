@@ -6,11 +6,11 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Navbar />
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 import { css } from "@emotion/css";
 
@@ -6,7 +6,8 @@ function Main() {
   const styles = css({
     "&": {
       display: "flex",
-      height: "100vh",
+      flexGrow: 1,
+      // height: "100vh",
     },
     "& .menu": {
       display: "block",
@@ -38,47 +39,46 @@ function Main() {
       margin: "5px",
     },
   });
+
+  const navLists = [
+    { click: "Dashboard", value: "/#" },
+    { click: "Products", value: "/#" },
+    { click: "Resources", value: "/#" },
+  ];
+
+  const menuContent = [
+    {
+      h2: "Lorem, ipsum.",
+      p: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nisieaque ratione opteiusrepudiandae. Aut eum blanditiis sequiquibusdam!",
+    },
+    {
+      h2: "Lorem, ipsum.",
+      p: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nisieaque ratione opteiusrepudiandae. Aut eum blanditiis sequiquibusdam!",
+    },
+    {
+      h2: "Lorem, ipsum.",
+      p: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nisieaque ratione opteiusrepudiandae. Aut eum blanditiis sequiquibusdam!",
+    },
+  ];
   return (
     <>
       <div className={`container ${styles}`}>
         <div className="menu">
           <ul>
-            <li>
-              <a href="">Dashboard</a>
-            </li>
-            <li>
-              <a href="">Products</a>
-            </li>
-            <li>
-              <a href="">Resources</a>
-            </li>
+            {navLists.map((list, id) => (
+              <li key={id}>
+                <a href={list.value}>{list.click}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="menucontent">
-          <div className="content">
-            <h2>Lorem, ipsum.</h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nisi
-              eaque ratione optio, eius repudiandae. Aut eum blanditiis sequi
-              quibusdam!
-            </p>
-          </div>
-          <div className="content">
-            <h2>Lorem, ipsum.</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi,
-              praesentium! Repellendus provident aperiam, fugit minima ab
-              nesciunt sapiente. Ipsam, veritatis?
-            </p>
-          </div>
-          <div className="content">
-            <h2>Lorem, ipsum.</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              quas sed consequatur? Magnam placeat amet deleniti in omnis aut
-              fugit.
-            </p>
-          </div>
+          {menuContent.map((content, id) => (
+            <div key={id} className="content">
+              <h2>{content.h2}</h2>
+              <p>{content.p}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import React from "react";
+// import React from "react";
 
 function Navbar() {
   const styles = css({
@@ -41,6 +41,14 @@ function Navbar() {
       color: "#ededed",
     },
   });
+
+  const pageLinks = [
+    { linkname: "Home", value: "/#" },
+    { linkname: "Contents", value: "/#" },
+    { linkname: "Products", value: "/#" },
+    { linkname: "Contacts", value: "/#" },
+  ];
+
   return (
     <>
       <div className={`navbar ${styles}`}>
@@ -49,18 +57,11 @@ function Navbar() {
         </div>
         <div className="pagelinks">
           <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Contents</a>
-            </li>
-            <li>
-              <a href="">Products</a>
-            </li>
-            <li>
-              <a href="">Contacts</a>
-            </li>
+            {pageLinks.map((link, id) => (
+              <li key={id}>
+                <a href={link.value}>{link.linkname}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
